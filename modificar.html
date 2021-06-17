@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Alta</title>
+</head>
+
+<body class="bg-dark">
+
+    <div class="container-fluid bg-dark">
+
+        <div class="row p-3 m-1 text-center align-items-center">
+            <div class="col-sm-4 h-100">
+                <h1 class="text-info text-center w-100 h-100">Modificar Prenda</h1>
+            </div>
+            <div class="col-sm-2 p-0">
+                <div class="row m-1"> <a href="agregar.html" class="border border-info rounded-1  p-2 border border-info  text-decoration-none text-info w-100 h-100 text-center">Agregar</a></div>
+            </div>
+            <div class="col-sm-2 p-0">
+                <div class="row m-1">
+                    <a href="listar.php" class="border border-info rounded-1 p-2 px-4 text-decoration-none text-info w-100 h-100 text-center">Ver</a>
+                </div>
+            </div>
+            <div class="col-sm-2 p-0">
+                <div class="row m-1">
+                    <a href="index.html" class="border border-info rounded-1 p-2 text-decoration-none text-info w-100 h-100 text-center">Inicio</a>
+                </div>
+            </div>
+            <div class="col-sm-2 p-0">
+                <div class="row m-1">
+                    <a href="eliminar.html" class="border border-info rounded-1 p-2 px-4 text-decoration-none text-info w-100 h-100 text-center">Eliminar</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row justifi-content-center text-center text-info p-4">
+            <div class="col-sm-6">
+                <div class="row">
+                    <img src="./img/eliminarPrenda.jpg" alt="">
+                </div>
+
+            </div>
+            <div class="col-sm-6 ">
+                <div class="row">
+                    <form id="forma" name="forma" method="POST" action="modificar.php" class=" text-center w-100">
+                        <div class="row m-3 ">
+                            <label class="col-sm-4 text-end fs-4" for="id-ropa">Codigo:</label>
+                            <input class="col-sm-4 border border-info" type="number" id="id-ropa" name="id-ropa" step="any" required=true class="m-2"><br>
+                        </div>
+                        <div class=" row m-3">
+                            <label class="col-sm-4 text-end fs-4" for="tipo-prenda">Tipo de Prenda: </label>
+                            <input class="col-sm-4 border border-info" type="text" id="tipo-prenda" name="tipo-prenda" required=true class="m-3"><br>
+                        </div>
+                        <div class="row m-3 ">
+                            <label class="col-sm-4 text-end fs-4" for="marca">Marca:</label>
+                            <input class="col-sm-4 border border-info" type="text" id="marca" name="marca" required=true class="m-3"><br>
+                        </div>
+                        <div class="row m-3">
+                            <label class="col-sm-4 text-end fs-4" for="talle">Talle:</label>
+                            <input class="col-sm-4 border border-info" type="text" id="talle" name="talle" required=true class="m-3 "><br>
+                        </div>
+                        <div class="row m-3 ">
+                            <label class="col-sm-4 text-end fs-4" for="precio">Precio:</label>
+                            <input class="col-sm-4 border border-info" type="number" id="precio" name="precio" step="any" required=true class="m-3"><br>
+                        </div>
+
+                        <div class="row m-3 p-3 justify-content-center">
+                            <div class="col-sm-3">
+                                <input class="border border-info bg-dark text-center text-info rounded-3 fs-4 p-2" type="submit" name="modificar" value="Agregar">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

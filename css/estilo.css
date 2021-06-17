@@ -1,0 +1,45 @@
+body {
+    min-width: 360px;
+    min-height: 630px;
+    background: linear-gradient(to bottom, #660033 0%, #003300 100%);
+}
+
+.blogin {
+    background: linear-gradient(to bottom, #660033 0%, #003300 100%);
+}
+
+.bregistro {
+    background: linear-gradient(to top, #660033 0%, #003300 100%);
+}
+
+a {
+    display: inline-block;
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    transition: all .5s ease;
+    transform-style: preserve-3d;
+}
+
+a:after {
+    content: ''url(../img/ok.png)'';
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transform-origin: left bottom;
+    transform: rotateX(90deg);
+    border-radius: 30px;
+}
+
+a:hover {
+    transform-origin: center bottom;
+    transform: rotateX(-90deg) translateY(100%);
+}
+
+.contenido {
+    border: 3px solid #d8cc2b;
+    border-radius: 50px 10px 50px 10px;
+}
