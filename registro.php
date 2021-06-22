@@ -13,6 +13,43 @@
 
 
 <body class="bregistro">
+    <?php  /*
+
+    $conexion= mysqli_connect("127.0.0.1","root","");
+    mysqli_select_db($conexion,"potrero_backend");
+    $datos=[];
+if (isset($_REQUEST['modificar'])) {/*comprueba primero que existe la variable modificar, que solo existe si apretamos el boton modificar en este caso */
+   
+   /* $tipoprenda= $_POST['tipo-prenda'];// $_POST se utiliza para enviar datos desde el html a la base seleccionada, por eso idicamos el nombre del campo dentro de corchetes
+    $marca= $_POST['marca'];
+    $talle= $_POST['talle'];
+    $precio= $_POST['precio'];
+    $idropa= $_POST['id-ropa'];
+    $descripcion=$_POST['descripcion'];
+    $direccionImagen=$_POST['direccionImagen'];
+   
+   
+   
+    
+   $consulta="UPDATE ropa 
+   SET `tipo-prenda`='$tipoprenda', marca ='$marca',talle='$talle', precio='$precio', descripcion='$descripcion', direccionImagen='$direccionImagen'
+   WHERE `id-ropa`='$idropa'";
+   mysqli_query($conexion,$consulta);
+   header('location: modificar.php');
+}
+if (isset($_REQUEST['cargar'])) {
+   $idropa= $_POST['id-ropa'];
+    if (!$idropa.is_null) {
+      
+        $consulta="SELECT * FROM ropa WHERE `id-ropa`='$idropa'";
+        $result= mysqli_query($conexion,$consulta);
+        $datos=mysqli_fetch_array($result);
+    }
+
+}
+
+    
+    */?>
     <div class="container-fluid">
         <div class="row py-4 px-0 justify-content-center align-items-center mb-3" style="background: linear-gradient(to bottom, #660033 0%, #003300 100%);">
             <div class="col-sm-12 col-md-6">
@@ -30,7 +67,7 @@
                     </div>
                     <div class="col-6 col-sm-6">
                         <div class="row justify-content-center">
-                            <a class="text-warning text-center text-decoration-none w-50" href="login.html">Ingresá <br><i class="material-icons px-3">login</i></a>
+                            <a class="text-warning text-center text-decoration-none w-50" href="login.php">Ingresá <br><i class="material-icons px-3">login</i></a>
                         </div>
                     </div>
 
@@ -53,7 +90,7 @@
                 <form action="registro.php" method="POST " name="registrousuarios" class="position-relative top-50 start-50 translate-middle m-0 p-4">
                     <div class="row justify-content-center align-items-center  mx-3">
                         <div class="col-sm-12 col-md-3 p-1">
-                            <label class="w-100 p-1 text-center" for="email ">Email </label>
+                            <label class="w-100 p-1 text-center" for="email">Email </label>
                         </div>
                         <div class="col-sm-12 col-md-9 p-1">
                             <input class="w-100 p-1" type="email" required placeholder="...@email.com " id="email " name="email ">
@@ -61,7 +98,7 @@
                     </div>
                     <div class="row justify-content-center align-items-center mx-3">
                         <div class="col-sm-12 col-md-3 p-1">
-                            <label class="w-100 p-1 text-center" for="nombre ">Nombre </label>
+                            <label class="w-100 p-1 text-center" for="nombre">Nombre </label>
                         </div>
                         <div class="col-sm-12 col-md-9 p-1">
                             <input class="w-100 p-1" type="text" required placeholder="...Nombre " id="nombre " name="nombre">
@@ -74,6 +111,13 @@
                         <div class="col-sm-12 col-md-9 p-1">
                             <input class="w-100 p-1" type="text " required placeholder="...Apellido " id="apellido " name="apellido ">
                         </div>
+                    </div><div class="row justify-content-center align-items-center  mx-3">
+                        <div class="col-sm-12 col-md-3 p-1">
+                            <label class="w-100 p-1 text-center" for="password">Contraseña</label>
+                        </div>
+                        <div class="col-sm-12 col-md-9 p-1">
+                            <input class="w-100 p-1" type="password" required placeholder="...invente una contraseña " id="password" name="password">
+                        </div>
                     </div>
 
                     <div class="row justify-content-center align-items-center  mx-3">
@@ -82,6 +126,8 @@
 
 
                     </div>
+                    
+
 
 
 

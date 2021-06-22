@@ -79,7 +79,7 @@ $art=$_GET['id'];
                         <div class="row  justify-content-center">
 
                             <div class="card text-center border-3  border-warning" style="width: 25rem;">
-                                <img class="card-img-top" src="img/buz1.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="img/<?php echo $reg['direccionImagen'];?>" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title text-primary">Buzo Nike</h5>
                                     <?php if ($reg['descripcion']){ ?>
@@ -116,26 +116,16 @@ $art=$_GET['id'];
         <div class="row p-3 my-3 mx-0">
             <div class="col-sm-12">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-6">
                                         <div class="row">
                                            <h6 class="text-warning text-center">Hecho por: Mayra Magiarate</h6> 
                                         </div>
                     </div>
-                    <div class="col-sm-3">
-                    <div class="row">
-                                           <h6 class="text-warning text-center">Hecho por: Mayra Magiarate</h6> 
-                                        </div>
+                    <div class="col-sm-6">
+                    <div class="row justify-content-center"> <i class="material-icons text-warning text-center">mail</i> </div>
+                    <div class="row justify-content-center"><h6 class="text-warning text-center">aryamdelsolar@gmail.com <br> aryamdelsolar@outlook.com</h6></div>
                     </div>
-                    <div class="col-sm-3">
-                    <div class="row">
-                                           <h6 class="text-warning text-center">Hecho por: Mayra Magiarate</h6> 
-                                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                    <div class="row">
-                                           <h6 class="text-warning text-center">Hecho por: Mayra Magiarate</h6> 
-                                        </div>
-                    </div>
+                  
                 </div>
             </div>
         </div>

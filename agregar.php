@@ -6,8 +6,10 @@
  $talle= $_POST['talle'];
  $precio= $_POST['precio'];
  $descripcion= $_POST['descripcion'];
+ $direccionImagen= $_POST['direccionImagen'];
 
-$consulta="INSERT INTO ropa (`id-ropa`,`tipo-prenda`,marca,talle,precio, descripcion) VALUES('','$tipoprenda','$marca','$talle','$precio','$descripcion')";
+
+$consulta="INSERT INTO ropa (`id-ropa`,`tipo-prenda`,marca,talle,precio, descripcion,direccionImagen) VALUES('','$tipoprenda','$marca','$talle','$precio','$descripcion','$direccionImagen')";
 mysqli_query($conexion,$consulta);
 header('location: listar.php');
 ?>

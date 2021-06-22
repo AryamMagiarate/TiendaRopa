@@ -22,7 +22,7 @@
             </div>
             <div class="col-sm-2 p-0">
                 <div class="row m-1">
-                    <a href="modificar.html" class="border border-info rounded-1 p-2 px-4 text-decoration-none text-info w-100 h-100 text-center">Modificar</a>
+                    <a href="modificar.php" class="border border-info rounded-1 p-2 px-4 text-decoration-none text-info w-100 h-100 text-center">Modificar</a>
                 </div>
             </div>
             <div class="col-sm-2 p-0">
@@ -43,6 +43,7 @@
       <th scope="col">Talle</th>
       <th scope="col">Precio</th>
       <th scope="col">Descrip</th>
+      <th scope="col">Dir img</th>
     </tr>
   </thead>
 
@@ -79,6 +80,7 @@
       <td><?php echo $reg['talle']; ?></td>
       <td><?php echo $reg['precio']; ?></td>
       <td><?php echo $reg['descripcion']; ?></td>
+      <td><?php echo $reg['direccionImagen']; ?></td>
     </tr>
     <?php } ?>
   </tbody>
