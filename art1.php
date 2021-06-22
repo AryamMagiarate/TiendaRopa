@@ -52,7 +52,7 @@ $art=$_GET['id'];
                     <div class="col-4 col-sm-4">
                         <div class="row p-2">
 
-                            <a class="text-warning text-center text-decoration-none  rounded-circle" href="registro.html">Registrate <br> <i class="material-icons px-4">assignment_ind</i></a>
+                            <a class="text-warning text-center text-decoration-none  rounded-circle" href="registro.php">Registrate <br> <i class="material-icons px-4">assignment_ind</i></a>
 
 
                         </div>

@@ -13,43 +13,46 @@
 
 
 <body class="bregistro">
-    <?php  /*
+    <?php  
 
     $conexion= mysqli_connect("127.0.0.1","root","");
     mysqli_select_db($conexion,"potrero_backend");
-    $datos=[];
-if (isset($_REQUEST['modificar'])) {/*comprueba primero que existe la variable modificar, que solo existe si apretamos el boton modificar en este caso */
+    $consulta="SELECT*FROM usuarios";
+    $result= mysqli_query($conexion,$consulta);
+  
+    $mensaje;
+    $emailregistrado=false;
+    $registroexitoso=false;
+
+
+if (isset($_REQUEST['enviar'])) {/*comprueba primero que existe la variable enviar, que solo existe si apretamos el boton enviar en este caso */
    
-   /* $tipoprenda= $_POST['tipo-prenda'];// $_POST se utiliza para enviar datos desde el html a la base seleccionada, por eso idicamos el nombre del campo dentro de corchetes
-    $marca= $_POST['marca'];
-    $talle= $_POST['talle'];
-    $precio= $_POST['precio'];
-    $idropa= $_POST['id-ropa'];
-    $descripcion=$_POST['descripcion'];
-    $direccionImagen=$_POST['direccionImagen'];
-   
-   
-   
-    
-   $consulta="UPDATE ropa 
-   SET `tipo-prenda`='$tipoprenda', marca ='$marca',talle='$talle', precio='$precio', descripcion='$descripcion', direccionImagen='$direccionImagen'
-   WHERE `id-ropa`='$idropa'";
-   mysqli_query($conexion,$consulta);
-   header('location: modificar.php');
-}
-if (isset($_REQUEST['cargar'])) {
-   $idropa= $_POST['id-ropa'];
-    if (!$idropa.is_null) {
-      
-        $consulta="SELECT * FROM ropa WHERE `id-ropa`='$idropa'";
-        $result= mysqli_query($conexion,$consulta);
-        $datos=mysqli_fetch_array($result);
+    $nombre= $_POST['nombre'];// $_POST se utiliza para enviar datos desde el html a la base seleccionada, por eso idicamos el nombre del campo dentro de corchetes
+    $apellido= $_POST['apellido'];
+    $password= $_POST['password'];
+    $email= $_POST['email'];
+    $rol='cliente';
+    while ($reg=mysqli_fetch_array($result)) {
+        if ($reg['email']==$email) {
+            $emailregistrado=true;
+              
     }
+}
+   if ($emailregistrado==false) {
+    $consulta="INSERT INTO usuarios (idusuario, nombre, apellido, password, email, rol) VALUES ('','$nombre','$apellido','$password','$email','$rol')";
+
+    mysqli_query($conexion,$consulta); 
+    $registroexitoso=true;
+    
+   }
+   
+    
+  
+ 
+  
 
 }
-
-    
-    */?>
+?>
     <div class="container-fluid">
         <div class="row py-4 px-0 justify-content-center align-items-center mb-3" style="background: linear-gradient(to bottom, #660033 0%, #003300 100%);">
             <div class="col-sm-12 col-md-6">
@@ -87,13 +90,19 @@ if (isset($_REQUEST['cargar'])) {
             </div>
             <div class="contenido col-sm-12  col-md-6 p-3 text-warning">
 
-                <form action="registro.php" method="POST " name="registrousuarios" class="position-relative top-50 start-50 translate-middle m-0 p-4">
+                <form action="registro.php" method="POST" name="registrousuarios" class="position-relative top-50 start-50 translate-middle m-0 p-4">
                     <div class="row justify-content-center align-items-center  mx-3">
+                    <?php if ($registroexitoso) {
+                                echo ('<p class="text-warning border border-danger text-center mt-2">¡Registro Exitoso! ¡Ingrese a su Cuenta!</p>');
+                            } ?>
                         <div class="col-sm-12 col-md-3 p-1">
                             <label class="w-100 p-1 text-center" for="email">Email </label>
                         </div>
                         <div class="col-sm-12 col-md-9 p-1">
-                            <input class="w-100 p-1" type="email" required placeholder="...@email.com " id="email " name="email ">
+                            <input class="w-100 p-1" type="email" required placeholder="...@email.com " id="email" name="email">
+                            <?php if ($emailregistrado) {
+                                echo ('<p class="text-warning border border-danger text-center mt-2">El email ingresado ya esta registrado!</p>');
+                            } ?>
                         </div>
                     </div>
                     <div class="row justify-content-center align-items-center mx-3">
@@ -109,7 +118,7 @@ if (isset($_REQUEST['cargar'])) {
                             <label class="w-100 p-1 text-center" for="apellido ">Apellido </label>
                         </div>
                         <div class="col-sm-12 col-md-9 p-1">
-                            <input class="w-100 p-1" type="text " required placeholder="...Apellido " id="apellido " name="apellido ">
+                            <input class="w-100 p-1" type="text " required placeholder="...Apellido " id="apellido " name="apellido">
                         </div>
                     </div><div class="row justify-content-center align-items-center  mx-3">
                         <div class="col-sm-12 col-md-3 p-1">
@@ -122,7 +131,7 @@ if (isset($_REQUEST['cargar'])) {
 
                     <div class="row justify-content-center align-items-center  mx-3">
 
-                        <button class="bg-warning text-light w-50 p-1 m-2 rounded-pill border border-light fs-4" style="text-shadow: 2px 1px 2px #330f21;" type="submit">Enviar</button>
+                        <button class="bg-warning text-light w-50 p-1 m-2 rounded-pill border border-light fs-4" style="text-shadow: 2px 1px 2px #330f21;" name="enviar" type="submit">Enviar</button>
 
 
                     </div>
