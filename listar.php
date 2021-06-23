@@ -50,9 +50,9 @@
   <tbody >
   <?php
     // 1) Conexion
-    $conexion= mysqli_connect("127.0.0.1","root","");
+    $conexion= mysqli_connect("localhost","id17014916_potrerobd","PotreroBase1.0");
     $consulta="SELECT*FROM ropa";
-    mysqli_select_db($conexion,"potrero_backend"); // Funcion de seleccion de la base de datos donde voy a hacer consultas que requiere dos parametros, la variable donde alojo la conexion y el nombre de la base de datos
+    mysqli_select_db($conexion,"id17014916_potrero_backend"); // Funcion de seleccion de la base de datos donde voy a hacer consultas que requiere dos parametros, la variable donde alojo la conexion y el nombre de la base de datos
     $datos= mysqli_query($conexion,$consulta); //variable que guardara un string, definido por una consulta a la base de datos
 
 

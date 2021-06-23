@@ -15,8 +15,8 @@
 <body class="bregistro">
     <?php  
 
-    $conexion= mysqli_connect("127.0.0.1","root","");
-    mysqli_select_db($conexion,"potrero_backend");
+    $conexion= mysqli_connect("localhost","id17014916_potrerobd","PotreroBase1.0");
+    mysqli_select_db($conexion,"id17014916_potrero_backend");
     $consulta="SELECT*FROM usuarios";
     $result= mysqli_query($conexion,$consulta);
   
@@ -65,7 +65,7 @@ if (isset($_REQUEST['enviar'])) {/*comprueba primero que existe la variable envi
                 <div class="row">
                     <div class="col-6 col-sm-6">
                         <div class="row justify-content-center">
-                            <a class="text-warning text-center text-decoration-none  w-50" href="indexCli.html">Inicio<br> <i class="material-icons px-4">fast_rewind</i></a>
+                            <a class="text-warning text-center text-decoration-none  w-50" href="indexCli.php">Inicio<br> <i class="material-icons px-4">fast_rewind</i></a>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6">

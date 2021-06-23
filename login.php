@@ -16,8 +16,8 @@
 
 <body class="blogin">
     <?php 
-    $conexion= mysqli_connect("127.0.0.1","root","");
-    mysqli_select_db($conexion,"potrero_backend");
+    $conexion= mysqli_connect("localhost","id17014916_potrerobd","PotreroBase1.0");
+    mysqli_select_db($conexion,"id17014916_potrero_backend");
     $loginExitoso=true;
     if (isset($_POST['email'] )&& isset($_POST['password'])) {
         
@@ -34,7 +34,7 @@
            if ($usuario['rol']=='administrador') {
                header('location: index.html');
            }else{
-           header('location: usuario.html');
+           header('location: usuario.php');
            }
         }else{
             $loginExitoso=false;
@@ -58,12 +58,12 @@
                 <div class="row ">
                     <div class="col-6 col-sm-6 ">
                         <div class="row justify-content-center ">
-                            <a class="text-warning text-center text-decoration-none w-50 " href="indexCli.html ">Inicio<br> <i class="material-icons px-4 ">fast_rewind</i></a>
+                            <a class="text-warning text-center text-decoration-none w-50 " href="indexCli.php ">Inicio<br> <i class="material-icons px-4 ">fast_rewind</i></a>
                         </div>
                     </div>
                     <div class="col-6 col-sm-6 ">
                         <div class="row justify-content-center ">
-                            <a class="text-warning text-center text-decoration-none w-50 " href="registro.html ">Registrate <br><i class="material-icons px-3 ">assignment_ind</i></a>
+                            <a class="text-warning text-center text-decoration-none w-50 " href="registro.php">Registrate <br><i class="material-icons px-3 ">assignment_ind</i></a>
                         </div>
                     </div>
 

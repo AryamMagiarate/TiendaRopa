@@ -13,8 +13,8 @@
 
 <body class="bg-dark">
 <?php
- $conexion= mysqli_connect("127.0.0.1","root","");
- mysqli_select_db($conexion,"potrero_backend");
+ $conexion= mysqli_connect("localhost","id17014916_potrerobd","PotreroBase1.0");
+ mysqli_select_db($conexion,"id17014916_potrero_backend");
  $datos=['id-ropa'=>'','tipo-prenda'=>'','marca'=>'','talle'=>'','precio'=>'','descripcion'=>'','direccionImagen'=>''];
  $tipoprenda='';
      $marca='';
